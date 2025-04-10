@@ -9,7 +9,7 @@ import (
 )
 
 func Test_SimpleLifecycle(t *testing.T) {
-	om := ordmap.New[string, int](0)
+	om := ordmap.New[string, int](10)
 
 	if _, ok := om.Get("life"); ok {
 		t.Fatal("expected nothing back from empty ordmap")

@@ -28,7 +28,7 @@ type OrdMap[K comparable, V any] struct {
 func New[K comparable, V any](initialSize int) *OrdMap[K, V] {
 	return &OrdMap[K, V]{
 		lookup: make(map[K]int),
-		data:   make([]Entry[K, V], initialSize),
+		data:   make([]Entry[K, V], 0, initialSize),
 	}
 }
 
@@ -36,7 +36,7 @@ func New[K comparable, V any](initialSize int) *OrdMap[K, V] {
 func NewUnsafe[K comparable, V any](initialSize int) *OrdMap[K, V] {
 	return &OrdMap[K, V]{
 		lookup: make(map[K]int),
-		data:   make([]Entry[K, V], initialSize),
+		data:   make([]Entry[K, V], 0, initialSize),
 		unsafe: true,
 	}
 }
